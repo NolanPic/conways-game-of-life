@@ -1,7 +1,5 @@
 // applies the rules of Game of Life to a single cell
 
-import { get } from "http";
-
 /**
  * Takes a two-dimensional array and applies the
  * rules of life to one cell of the array.
@@ -40,7 +38,7 @@ function getAliveNeighborCount(grid, row, column) {
   //   o o o
   const topLeft = getCellIfExists(grid, row - 1, column - 1);
 
-  //   |
+  //   V
   // o o o
   // o x o
   // o o o
