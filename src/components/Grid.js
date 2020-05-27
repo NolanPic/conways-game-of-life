@@ -14,7 +14,11 @@ const Grid = ({ generation, size }) => {
     <div style={styles}>
       {generation.map((row, r_index) => {
         return row.map((cell, c_index) => (
-          <Cell key={`${r_index}-${c_index}`} alive={cell} />
+          <Cell
+            key={`${r_index}-${c_index}`}
+            index={`${r_index}-${c_index}`}
+            alive={cell}
+          />
         ));
       })}
     </div>

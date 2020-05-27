@@ -2,7 +2,7 @@ import React from "react";
 
 const Cell = ({ alive }) => {
   const styles = {
-    backgroundColor: alive === true ? "green" : "gray",
+    backgroundColor: alive === 1 ? "green" : "gray",
   };
 
   return <div style={styles}></div>;
