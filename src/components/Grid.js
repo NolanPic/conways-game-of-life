@@ -2,14 +2,6 @@ import React from "react";
 import Cell from "./Cell";
 
 const Grid = ({ generation, size }) => {
-  // CSS grid determines the shape of the grid,
-  // so we can flatten our generation 2d array
-  // and the grid will take take of placing each
-  // item in the correct row
-
-  const flattenedGen = generation.flat();
-  flattenedGen[10] = true;
-
   const styles = {
     display: "grid",
     height: "100vh",
@@ -20,9 +12,11 @@ const Grid = ({ generation, size }) => {
 
   return (
     <div style={styles}>
-      {flattenedGen.map((cell, index) => (
-        <Cell key={index} alive={cell} />
-      ))}
+      {generation.map((row, r_index) => {
+        return row.map((cell, c_index) => (
+          <Cell key={`${r_index}-${c_index}`} alive={cell} />
+        ));
+      })}
     </div>
   );
 };
