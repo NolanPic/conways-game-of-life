@@ -1,7 +1,7 @@
 import React from "react";
 import Cell from "./Cell";
 
-const Grid = ({ generation, size }) => {
+const Grid = ({ generation, size, toggleCell }) => {
   const styles = {
     display: "grid",
     height: "100vh",
@@ -18,6 +18,7 @@ const Grid = ({ generation, size }) => {
             key={`${r_index}-${c_index}`}
             index={`${r_index}-${c_index}`}
             alive={cell}
+            toggleCell={toggleCell}
           />
         ));
       })}

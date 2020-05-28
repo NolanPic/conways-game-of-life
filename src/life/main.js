@@ -24,6 +24,26 @@ const Main = ({ options }) => {
     setGenCount(genCount + 1);
   };
 
+  const toggleCell = (cellIndexStr) => {
+    if (!isPlaying) {
+      // copy the grid
+      const newGrid = [...generation];
+      // get cell
+      const row = parseInt(cellIndexStr.split("-")[0]);
+      const column = parseInt(cellIndexStr.split("-")[1]);
+      const cell = newGrid[row][column];
+      if (cell === 0) {
+        // turn it on
+        newGrid[row][column] = 1;
+      } else {
+        // turn it off
+        newGrid[row][column] = 0;
+      }
+
+      setGeneration(newGrid);
+    }
+  };
+
   const reset = () => {
     setIsPlaying(false);
     setGeneration(generate(null, gridSize));
@@ -70,7 +90,9 @@ const Main = ({ options }) => {
         stepOneGen={stepOneGen}
         reset={reset}
       />
-      {generation && <Grid generation={generation} size={gridSize} />}
+      {generation && (
+        <Grid generation={generation} size={gridSize} toggleCell={toggleCell} />
+      )}
     </>
   );
 };
