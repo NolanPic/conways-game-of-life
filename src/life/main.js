@@ -55,13 +55,12 @@ const Main = ({ options }) => {
     // pass in null to reset the grid
     const newGeneration = generate(null, gridSize);
 
-    // TESTING
+    // Glider
     newGeneration[0][1] = 1;
     newGeneration[1][2] = 1;
     newGeneration[2][0] = 1;
     newGeneration[2][1] = 1;
     newGeneration[2][2] = 1;
-    // TESTING
 
     setGeneration(newGeneration);
   }, [gridSize]);
