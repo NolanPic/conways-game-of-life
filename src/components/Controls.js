@@ -2,7 +2,7 @@ import React from "react";
 
 const styles = {
   display: "grid",
-  gridTemplateColumns: "repeat(5, 1fr)",
+  gridTemplateColumns: "repeat(6, 1fr)",
   justifyContent: "space-between",
 };
 
@@ -14,6 +14,7 @@ const Controls = ({
   setSpeed,
   stepOneGen,
   currentGen,
+  reset,
 }) => {
   const validateAndSetSpeed = (speed) => {
     if (speed < 0) {
@@ -31,7 +32,7 @@ const Controls = ({
           value={currentSpeed}
           onChange={(e) => validateAndSetSpeed(e.target.value)}
         ></input>{" "}
-        / per second
+        per/s
       </label>
       <button onClick={() => setIsPlaying(!isPlaying)}>
         {isPlaying ? "Stop" : "Start"}
@@ -51,6 +52,7 @@ const Controls = ({
           <option value="100">100</option>
         </select>
       </label>
+      <button onClick={reset}>Reset</button>
     </div>
   );
 };
