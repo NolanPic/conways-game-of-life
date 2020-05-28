@@ -3,11 +3,11 @@ import Grid from "../components/Grid";
 import generate from "./generate";
 
 const defaultOptions = {
-  gridSize: 5,
+  gridSize: 25,
   speed: 1, // iterations per second (default is off)
 };
 
-const Main = ({ options }) => {
+const Main = ({ options, genCount, setGenCount }) => {
   if (!options) {
     options = defaultOptions;
   }
@@ -27,6 +27,7 @@ const Main = ({ options }) => {
     const gameLoop = setInterval(() => {
       console.log("generation", generation);
       setGeneration(generate(generation, options.gridSize));
+      setGenCount(genCount + 1);
     }, 1000 / options.speed);
 
     return () => clearTimeout(gameLoop);
