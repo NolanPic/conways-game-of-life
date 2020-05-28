@@ -14,7 +14,8 @@ export default function generate(currentGen, size) {
   const nextGen = createEmptyGrid(size);
 
   // if current gen is null or empty, then
-  // this is the beginning of the game
+  // this is the beginning of the game,
+  // or the grid size is being changed
   if (!currentGen || !currentGen.length) {
     return nextGen;
   }
