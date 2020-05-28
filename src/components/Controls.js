@@ -2,12 +2,13 @@ import React from "react";
 
 const styles = {
   display: "grid",
-  gridTemplateColumns: "repeat(4, 1fr)",
+  gridTemplateColumns: "repeat(5, 1fr)",
   justifyContent: "space-between",
 };
 
 const Controls = ({
-  setControls,
+  isPlaying,
+  setIsPlaying,
   setGridSize,
   currentSpeed,
   setSpeed,
@@ -23,6 +24,18 @@ const Controls = ({
   return (
     <div style={styles}>
       <span>Generation: {currentGen || 0}</span>
+      <label>
+        Speed:{" "}
+        <input
+          type="number"
+          value={currentSpeed}
+          onChange={(e) => validateAndSetSpeed(e.target.value)}
+        ></input>{" "}
+        / per second
+      </label>
+      <button onClick={() => setIsPlaying(!isPlaying)}>
+        {isPlaying ? "Stop" : "Start"}
+      </button>
       <button onClick={stepOneGen}>Step</button>
       <label>
         Grid size:
@@ -37,15 +50,6 @@ const Controls = ({
           <option value="75">75</option>
           <option value="100">100</option>
         </select>
-      </label>
-      <label>
-        Speed:{" "}
-        <input
-          type="number"
-          value={currentSpeed}
-          onChange={(e) => validateAndSetSpeed(e.target.value)}
-        ></input>{" "}
-        / per second
       </label>
     </div>
   );

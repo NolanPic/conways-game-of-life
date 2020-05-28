@@ -13,6 +13,7 @@ const Main = ({ options }) => {
     options = defaultOptions;
   }
 
+  // The initial generation
   const newGeneration = generate(null, options.gridSize);
   // TESTING
 
@@ -26,13 +27,18 @@ const Main = ({ options }) => {
   const [genCount, setGenCount] = useState(0);
   const [gridSize, setGridSize] = useState(options.gridSize);
   const [speed, setSpeed] = useState(options.speed);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const stepOneGen = () => {
+    setGeneration(generate(generation, options.gridSize));
+    setGenCount(genCount + 1);
+  };
 
   useEffect(() => {
     let gameLoop = null;
-    if (speed > 0) {
+    if (speed > 0 && isPlaying) {
       gameLoop = setInterval(() => {
-        setGeneration(generate(generation, options.gridSize));
-        setGenCount(genCount + 1);
+        stepOneGen();
       }, 1000 / speed);
     }
 
@@ -42,12 +48,13 @@ const Main = ({ options }) => {
   return (
     <>
       <Controls
+        isPlaying={isPlaying}
         currentGen={genCount}
         currentSpeed={speed}
         setGridSize={setGridSize}
         setSpeed={setSpeed}
-        stepOneGen={() => {}}
-        setControls={() => {}}
+        setIsPlaying={setIsPlaying}
+        stepOneGen={stepOneGen}
       />
       <Grid generation={generation} size={gridSize} />
     </>
