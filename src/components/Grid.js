@@ -8,6 +8,7 @@ const Grid = ({ generation, size, toggleCell }) => {
     gridTemplateColumns: `repeat(${size}, calc((100%/${size}) - 1px))`,
     gridTemplateRows: `repeat(${size}, calc((100%/${size}) - 1px))`,
     gridGap: "1px",
+    backgroundColor: "#9DB4C0",
   };
 
   return (

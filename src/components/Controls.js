@@ -1,9 +1,15 @@
 import React from "react";
+import Btn from "./Btn";
 
 const styles = {
   display: "grid",
-  gridTemplateColumns: "repeat(6, 1fr)",
+  gridTemplateColumns: "repeat(5, 1fr)",
   justifyContent: "space-between",
+  alignItems: "center",
+  fontSize: "1.5rem",
+  paddingLeft: "0.5rem",
+  paddingBottom: "0.5rem",
+  borderBottom: "2px dashed black",
 };
 
 const Controls = ({
@@ -34,10 +40,12 @@ const Controls = ({
         ></input>{" "}
         per/s
       </label>
-      <button onClick={() => setIsPlaying(!isPlaying)}>
-        {isPlaying ? "Stop" : "Start"}
-      </button>
-      <button onClick={stepOneGen}>Step</button>
+      <div>
+        <Btn onClick={() => setIsPlaying(!isPlaying)}>
+          {isPlaying ? "Stop" : "Start"}
+        </Btn>
+        <Btn onClick={stepOneGen}>Step</Btn>
+      </div>
       <label>
         Grid size:
         <select
@@ -52,7 +60,7 @@ const Controls = ({
           <option value="100">100</option>
         </select>
       </label>
-      <button onClick={reset}>Reset</button>
+      <Btn onClick={reset}>Reset</Btn>
     </div>
   );
 };
