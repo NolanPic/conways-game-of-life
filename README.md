@@ -8,6 +8,7 @@ The game logic and rules are purely JS. The UI and controls are React, and the g
 
 ## NOTES
 
+- Cells stop at the edge of the grid--they do not wrap
 - Generations per second is noticably slower the larger the grid is
 
 ## TODO
