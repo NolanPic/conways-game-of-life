@@ -5,6 +5,7 @@ const styles = {
   backgroundColor: "rgb(88, 128, 181)",
   fontFamily: "VT323",
   fontSize: "1.5rem",
+  cursor: "pointer",
 };
 
 const Btn = ({ onClick, children }) => {
