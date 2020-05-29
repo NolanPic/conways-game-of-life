@@ -5,7 +5,7 @@ import generate from "./generate";
 
 const defaultOptions = {
   gridSize: 25,
-  speed: 0, // iterations per second (default is off)
+  speed: 1, // iterations per second
 };
 
 const Main = ({ options }) => {
