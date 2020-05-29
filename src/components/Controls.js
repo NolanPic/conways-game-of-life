@@ -44,7 +44,7 @@ const Controls = ({
         <Btn onClick={() => setIsPlaying(!isPlaying)}>
           {isPlaying ? "Stop" : "Start"}
         </Btn>
-        <Btn onClick={stepOneGen}>Step</Btn>
+        <Btn onClick={stepOneGen}>Step Once</Btn>
       </div>
       <label>
         Grid size:

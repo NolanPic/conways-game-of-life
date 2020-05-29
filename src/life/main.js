@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Intro from "../components/Intro";
 import Grid from "../components/Grid";
 import Controls from "../components/Controls";
 import generate from "./generate";
@@ -99,6 +100,7 @@ const Main = ({ options }) => {
 
   return (
     <>
+      <Intro />
       <Controls
         isPlaying={isPlaying}
         currentGen={genCount}
