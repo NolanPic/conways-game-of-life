@@ -83,6 +83,7 @@ const Main = ({ options }) => {
     newGeneration[2][2] = 1;
 
     setGeneration(newGeneration);
+    setGenCount(0);
   }, [gridSize]);
 
   // main game loop
