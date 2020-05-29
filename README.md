@@ -1,6 +1,6 @@
-# conways-game-of-life
+# John Conway's Game of Life 🌄
 
-An implementation of John Conway's Game of Life 🌄
+An implementation of John Conway's Game of Life by Nolan Picini
 
 ## Stack
 
